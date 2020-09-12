@@ -45,8 +45,10 @@ export class SpeakersPage implements OnInit {
   }
 
   async recognizeImage(){
+    this.loadingService.wait();
     const result= await this.worker.recognize(this.image);
     console.log(result);
+    this.loadingService.ready();
     this.ocrResult=result.data.text;
   }
 

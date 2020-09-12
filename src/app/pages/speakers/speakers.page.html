@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title center>Image to Text </ion-title>
+    <ion-title text-center>Image to Text </ion-title>
   </ion-toolbar>
   
 </ion-header>
@@ -14,9 +14,9 @@
   <ion-card  *ngIf="workerReady && captureProgress > 0">
     <ion-card-header>Image Text </ion-card-header>
     <ion-card-title> Capture Progress : {{captureProgress}} %</ion-card-title>
-    <ion-card-content style="color: white;">
-    <ion-label>{{ocrResult}}</ion-label>
-      
+    <ion-card-content style="color: black;">
+    <ion-textarea value="{{ocrResult}}"></ion-textarea>
+     
     </ion-card-content>
   </ion-card>
 </ion-content>
