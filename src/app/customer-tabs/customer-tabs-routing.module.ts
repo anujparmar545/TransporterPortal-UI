@@ -23,25 +23,25 @@ const routes: Routes = [
         children:[
           {
           path: '',
-        loadChildren: () => import('../pages/speakers/speakers.module').then(m => m.SpeakersPageModule)
+        loadChildren: () => import('../pages/customer/browse-deals/browse-deals.module').then(m => m.BrowseDealsPageModule)
           }
         ]
       },
-      {
-        path: 'tab3',
-        children:[
-          {
-          path: '',
-        loadChildren: () => import('../pages/map/map.module').then(m => m.MapPageModule)
-          }
-        ]
-      },
+      // {
+      //   path: 'tab3',
+      //   children:[
+      //     {
+      //     path: '',
+      //   loadChildren: () => import('../pages/map/map.module').then(m => m.MapPageModule)
+      //     }
+      //   ]
+      // },
       {
         path: 'tab4',
         children:[
           {
           path: '',
-        loadChildren: () => import('../pages/about/about.module').then(m => m.AboutPageModule)
+        loadChildren: () => import('../pages/customer/customer-profile/customer-profile.module').then(m => m.CustomerProfilePageModule)
           }
         ]
       },

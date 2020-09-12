@@ -18,7 +18,19 @@ const routes: Routes = [
   {
     path: 'customer-tabs',
     loadChildren: () => import('./customer-tabs/customer-tabs.module').then( m => m.CustomerTabsPageModule)
+  },  {
+    path: 'browse-deals',
+    loadChildren: () => import('./pages/customer/browse-deals/browse-deals.module').then( m => m.BrowseDealsPageModule)
+  },
+  {
+    path: 'my-deals',
+    loadChildren: () => import('./pages/customer/my-deals/my-deals.module').then( m => m.MyDealsPageModule)
+  },
+  {
+    path: 'customer-profile',
+    loadChildren: () => import('./pages/customer/customer-profile/customer-profile.module').then( m => m.CustomerProfilePageModule)
   }
+
 
  
 ];
