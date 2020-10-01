@@ -18,7 +18,8 @@ const routes: Routes = [
   {
     path: 'customer-tabs',
     loadChildren: () => import('./customer-tabs/customer-tabs.module').then( m => m.CustomerTabsPageModule)
-  },  {
+  },
+  {
     path: 'browse-deals',
     loadChildren: () => import('./pages/customer/browse-deals/browse-deals.module').then( m => m.BrowseDealsPageModule)
   },
@@ -29,7 +30,16 @@ const routes: Routes = [
   {
     path: 'customer-profile',
     loadChildren: () => import('./pages/customer/customer-profile/customer-profile.module').then( m => m.CustomerProfilePageModule)
-  }
+  },
+  // {
+  //   path: 'customer-registration',
+  //   component: CustomerRegistrationComponent
+  // },
+  {
+    path: 'customer-registration',
+    loadChildren: () => import('./pages/customer/customer-registration/customer-registration.module').then( m => m.CustomerRegistrationPageModule)
+  },
+
 
 
  

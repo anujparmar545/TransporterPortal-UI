@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActionSheetController} from '@ionic/angular';
 import {NgProgress} from 'ngx-progressbar';
 import {createWorker} from 'tesseract.js'
-import { LoadingService } from '../../services/loading.service';
+import { LoadingService } from '../../services/loading-service/loading.service';
 import {Plugins, CameraResultType, CameraSource} from '@capacitor/core'
 const {Camera}=Plugins;
 

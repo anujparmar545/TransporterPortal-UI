@@ -1,7 +1,64 @@
-<p>
-  login works!
+<p text-center>
+  login works!<br><br><br>
 
-  <ion-button (click)="doLogin('customer')">Customer Login</ion-button>
-
-  <ion-button (click)="doLogin('transporter')">Transporter Login</ion-button>
+  <ion-button style="align-items: center;" (click)="doLogin('customer')">Customer Login</ion-button>
+  &nbsp;&nbsp;&nbsp;
+  <ion-button style="align-items: center;" (click)="doLogin('transporter')">Transporter Login</ion-button>
 </p>
+
+<ion-header container mode="ios">
+  <ion-row>
+      <ion-col>
+          <div>
+              <span text-center> Welcome To Transportation Portal </span>
+              <span style="padding-right: 10px;"><ion-icon iq-img vertical-align-center class="iq-logo-icon"></ion-icon></span>
+          </div>
+      </ion-col>
+  </ion-row>
+</ion-header>
+<ion-content>
+
+    <div>
+      <div>
+        <ion-grid > 
+          <ion-text *ngIf="error" red-text>{{error}}</ion-text>
+          <ion-item  lines="none">
+            <ion-icon name="person-outline"></ion-icon>
+              
+              <ion-input type="text" placeholder="Username" name="username"
+                  [(ngModel)]="registerCredentials.username" required autocomplete="off"></ion-input>
+          </ion-item>
+          <ion-item  lines="none">
+            <ion-icon name="lock-closed-outline"></ion-icon>
+              <ion-input type="password" placeholder="Password" name="password"
+                  [(ngModel)]="registerCredentials.password" required autocomplete="off"></ion-input>
+          </ion-item>
+          <ion-row>
+              <ion-item>
+                  <ion-checkbox  mode="md" checked="false" color="secondary"
+                      [(ngModel)]="rememberMe">
+                  </ion-checkbox>
+                  <span register-heading font-14 basic-padding-left>
+                      Remember Me
+                  </span>
+              </ion-item>
+              <ion-col text-end align-self-center>
+                  <ion-button no-padding font-14 color="secondary" text-underline fill="clear" 
+                      (click)="forgotPassword()" routerDirection="forward">
+                      Forgot Password
+                  </ion-button>
+              </ion-col>
+          </ion-row>
+      </ion-grid>
+  </div>
+  <div >
+    <ion-button style="--background-hover: #FF0000!important;" type="submit" (click)="login()" expand="block">Login </ion-button>
+</div>
+</div>
+
+</ion-content>
+
+
+
+
+ 

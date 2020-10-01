@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {Validators, FormBuilder, FormGroup, FormsModule,ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-schedule',
   templateUrl: './schedule.page.html',
@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SchedulePage implements OnInit {
 
-  constructor() { }
+  cf:FormGroup
+  
+  constructor(private formBuilder: FormBuilder) { }
+  
 
   ngOnInit() {
+   
   }
 
 }

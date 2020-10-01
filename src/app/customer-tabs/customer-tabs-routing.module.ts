@@ -14,7 +14,8 @@ const routes: Routes = [
         children:[
           {
           path: '',
-        loadChildren: () => import('../pages/schedule/schedule.module').then(m => m.SchedulePageModule)
+          loadChildren: () => import('../pages/customer/browse-deals/browse-deals.module').then(m => m.BrowseDealsPageModule)
+        
           }
         ]
       },
@@ -23,7 +24,7 @@ const routes: Routes = [
         children:[
           {
           path: '',
-        loadChildren: () => import('../pages/customer/browse-deals/browse-deals.module').then(m => m.BrowseDealsPageModule)
+        loadChildren: () => import('../pages/customer/my-deals/my-deals.module').then(m => m.MyDealsPageModule)
           }
         ]
       },

@@ -212,5 +212,79 @@
             "status": 0,
             "transporter_id": 5
           }
+      ],
+      "customers": [
+        {
+          "id": 1,
+          "name": "customer1",
+          "email": "customer1@gmail.com",
+          "username": "customer1",
+          "password": "customer1",
+          "address": "address1",
+          "city": "Indore",
+          "state": "MP",
+          "country": "India",
+          "zipcode": "483474"
+        },
+        {
+          "id": 2,
+          "name": "customer2",
+          "email": "customer2@gmail.com",
+          "username": "customer2",
+          "password": "customer2",
+          "address": "address2",
+          "city": "Pune",
+          "state": "MP",
+          "country": "India",
+          "zipcode": "598753"
+        },
+        {
+          "id": 3,
+          "name": "customer3",
+          "email": "customer3@gmail.com",
+          "username": "customer3",
+          "password": "customer3",
+          "address": "address3",
+          "city": "Delhi",
+          "state": "MA",
+          "country": "India",
+          "zipcode": "978442"
+        },
+        {
+          "id": 4,
+          "name": "customer4",
+          "email": "customer4@gmail.com",
+          "username": "customer4",
+          "password": "customer4",
+          "address": "address4",
+          "city": "Mumbai",
+          "state": "DH",
+          "country": "India",
+          "zipcode": "548393"
+        },
+        {
+          "id": 5,
+          "name": "customer5",
+          "email": "customer5@gmail.com",
+          "username": "customer5",
+          "password": "customer5",
+          "address": "address5",
+          "city": "Pune",
+          "state": "MA",
+          "country": "India",
+          "zipcode": "598433"
+        },
+        {
+          "id": 6,
+          "name": "c",
+          "email": "c@gmail.com",
+          "username": "c",
+          "password": "c",
+          "address": "c",
+          "city": "c",
+          "state": "c",
+          "country": "c",
+          "zipcode": "3333"
+        }
       ]
 }
