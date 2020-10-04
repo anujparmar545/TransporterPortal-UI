@@ -1,0 +1,71 @@
+<ion-header one-margin-top>
+  <ion-toolbar no-top-border>
+    <ion-buttons slot="start">
+      <ion-back-button style="color:black" defaultHref="/" text="" size="small"></ion-back-button>
+    </ion-buttons>
+    <ion-title cr-header>Transporter Registration</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>  
+  <form [formGroup]="transporterForm"  >
+    <ion-item>
+      <ion-label position="floating">Name</ion-label>
+      <ion-input type="text" formControlName="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="text" formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Username</ion-label>
+      <ion-input type="text" formControlName="username"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Confirm Password</ion-label>
+      <ion-input type="password" formControlName="confirmPassword"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Address</ion-label>
+      <ion-input type="text" formControlName="address"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">City</ion-label>
+      <ion-input type="text" formControlName="city"></ion-input>
+    </ion-item>
+    
+   <ion-item>
+      <ion-label position="floating">State</ion-label>
+      <ion-input type="text" formControlName="state"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Country</ion-label>
+      <ion-input type="text" formControlName="country"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Zipcode</ion-label>
+      <ion-input type="text"  formControlName="zipcode"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">GST Registration No.</ion-label>
+      <ion-input type="text"  formControlName="gstReg"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Pancard No.</ion-label>
+      <ion-input type="text"  formControlName="pancard"></ion-input>
+    </ion-item>
+
+
+    <br><br>
+    <ion-button type="button" ng-click="submit()" expand="block" (click)="onSubmit()" color="success">Submit</ion-button>
+    <br><br>
+  </form>
+</ion-card>
+
+</ion-content>

@@ -6,16 +6,15 @@ import { Router, NavigationExtras } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { LoadingService } from 'src/app/services/loading-service/loading.service';
 import { AlertController } from '@ionic/angular';
-//import { Storage } from '@ionic/storage';
-
 @Component({
-  selector: 'app-customer-registration',
-  templateUrl: './customer-registration.page.html',
-  styleUrls: ['./customer-registration.page.scss'],
+  selector: 'app-transporter-registration',
+  templateUrl: './transporter-registration.page.html',
+  styleUrls: ['./transporter-registration.page.scss'],
 })
-export class CustomerRegistrationPage implements OnInit {
+export class TransporterRegistrationPage implements OnInit {
 
-  private customerForm : FormGroup;
+  
+  private transporterForm : FormGroup;
   name:any
   
  constructor( private formBuilder: FormBuilder,
@@ -25,18 +24,6 @@ export class CustomerRegistrationPage implements OnInit {
                private router:Router,
                private alertController:AlertController ) {}
 
-// formErrors = {
-//   'name':  '',
-//   'email': '',
-//   'username':  '',
-//   'password': '',
-//   'confirmPassword':  '',
-//   'address':  '',
-//   'city':   '',
-//   'state':  '',
-//   'country': '',
-//   'zipcode': ''
-// };
 
 validationMessages = {
   'name': {
@@ -83,8 +70,8 @@ validationMessages = {
   
 };
 
-  createCustomerForm() {
-    this.customerForm = this.formBuilder.group({
+  createTransporterForm() {
+    this.transporterForm = this.formBuilder.group({
       name:             ['', [Validators.required, Validators.minLength(1), Validators.maxLength(25)]],
       email:            ['', [Validators.required]],
       username:         ['', [Validators.required, Validators.minLength(1), Validators.maxLength(25)]],
@@ -94,57 +81,57 @@ validationMessages = {
       city:             ['', Validators.required],
       state:            ['', Validators.required],
       country:          ['', Validators.required],
-      zipcode:          ['', [Validators.required, Validators.maxLength(7)]]
+      zipcode:          ['', [Validators.required, Validators.maxLength(7)]],
+      gstReg:          ['', Validators.required],
+      pancard:          ['', Validators.required]
 
     });
 
 
   }
 
-  get f() { return this.customerForm.controls; }
+  get f() { return this.transporterForm.controls; }
 
   ngOnInit() {
-    this.createCustomerForm();
+    this.createTransporterForm();
     
   }
 
   
    async onSubmit(){
      this.loadingService.wait();
-    console.log('@@@@',this.customerForm.value)
+    console.log('@@@@',this.transporterForm.value)
 
     const request={
-      "name": this.customerForm.get('name').value,
-      "email" : this.customerForm.get('email').value,
-      "username" : this.customerForm.get('username').value,
-      "password"  : this.customerForm.get('password').value,
-      "address"  : this.customerForm.get('address').value,
-      "city"   : this.customerForm.get('city').value,
-      "state"  : this.customerForm.get('state').value,
-      "country"  : this.customerForm.get('country').value,
-      "zipcode"  : this.customerForm.get('zipcode').value
+      "name": this.transporterForm.get('name').value,
+      "email" : this.transporterForm.get('email').value,
+      "username" : this.transporterForm.get('username').value,
+      "password"  : this.transporterForm.get('password').value,
+      "address"  : this.transporterForm.get('address').value,
+      "city"   : this.transporterForm.get('city').value,
+      "state"  : this.transporterForm.get('state').value,
+      "country"  : this.transporterForm.get('country').value,
+      "zipcode"  : this.transporterForm.get('zipcode').value,
+      "gstReg"  : this.transporterForm.get('gstReg').value,
+      "pancard"  : this.transporterForm.get('pancard').value
     };
     
 
     const alert = await this.alertController.create({
-      header: 'Customer',
-      message: 'Successfully Registered',
+      header: 'Transporter',
+      message: 'Your Registration is under process...You will receive an email once your request is approved.',
       buttons: ['OK']
       });
 
-    if(request.password==this.customerForm.get('confirmPassword').value)
-        this.apiService.saveCustomer(request).subscribe(res=>{
+    if(request.password==this.transporterForm.get('confirmPassword').value)
+        this.apiService.saveTransporter(request).subscribe(res=>{
           alert.present();
         },err => {console.log(err)});
 
     this.router.navigate(['']); 
-      
-    //this.router.navigate(['transporter-tabs']); 
     
-    
-        
     this.loadingService.ready();
-    //this.customerForm.reset();
+    this.transporterForm.reset();
 
   }
 

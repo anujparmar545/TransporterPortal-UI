@@ -1,23 +1,14 @@
-<p text-center>
-  login works!<br><br><br>
-
-  <ion-button style="align-items: center;" (click)="doLogin('customer')">Customer Login</ion-button>
-  &nbsp;&nbsp;&nbsp;
-  <ion-button style="align-items: center;" (click)="doLogin('transporter')">Transporter Login</ion-button>
-</p>
-
 <ion-header container mode="ios">
   <ion-row>
       <ion-col>
-          <div>
-              <span text-center> Welcome To Transportation Portal </span>
-              <span style="padding-right: 10px;"><ion-icon iq-img vertical-align-center class="iq-logo-icon"></ion-icon></span>
+          <div title-css>
+              Welcome <br>to<br> Transportation Portal
           </div>
       </ion-col>
   </ion-row>
 </ion-header>
 <ion-content>
-
+  <br><br><br>
     <div>
       <div>
         <ion-grid > 
@@ -43,7 +34,7 @@
                   </span>
               </ion-item>
               <ion-col text-end align-self-center>
-                  <ion-button no-padding font-14 color="secondary" text-underline fill="clear" 
+                  <ion-button no-padding font-14 color="red" text-underline fill="clear" 
                       (click)="forgotPassword()" routerDirection="forward">
                       Forgot Password
                   </ion-button>
@@ -54,6 +45,16 @@
   <div >
     <ion-button style="--background-hover: #FF0000!important;" type="submit" (click)="login()" expand="block">Login </ion-button>
 </div>
+</div>
+
+<br>
+<div text-center>
+  <br><br><br>
+  <div style="text-align: center;font-weight: bold;">Don't have account?</div>
+  <br>
+  <ion-button style="align-items: center;" (click)="doLogin('customer')">Register as Customer</ion-button>
+  
+  <ion-button style="align-items: center;" (click)="doLogin('transporter')">Register as Transporter</ion-button>
 </div>
 
 </ion-content>

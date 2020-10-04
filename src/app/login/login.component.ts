@@ -45,11 +45,11 @@ export class LoginComponent implements OnInit {
             this.router.navigate(['customer-registration']);
             //this.router.navigate(['customer-tabs']);  
         if(name=='transporter'){
-          this.apiService.getCity().subscribe(res=>{
-            if(res){console.log('######',JSON.stringify(res))}
-          },
-          err => {console.log(err)});
-          //this.router.navigate(['transporter-tabs']);
+          // this.apiService.getCity().subscribe(res=>{
+          //   if(res){console.log('######',JSON.stringify(res))}
+          // },
+          // err => {console.log(err)});
+          this.router.navigate(['transporter-registration']);
         }
       }
 }

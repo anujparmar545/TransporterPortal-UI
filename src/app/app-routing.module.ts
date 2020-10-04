@@ -38,7 +38,11 @@ const routes: Routes = [
   {
     path: 'customer-registration',
     loadChildren: () => import('./pages/customer/customer-registration/customer-registration.module').then( m => m.CustomerRegistrationPageModule)
+  },  {
+    path: 'transporter-registration',
+    loadChildren: () => import('./pages/transporter/transporter-registration/transporter-registration.module').then( m => m.TransporterRegistrationPageModule)
   },
+
 
 
 
